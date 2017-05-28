@@ -1,5 +1,5 @@
 .conteiner {
-    width: 300px;
+    width: 500px;
     height: 400px;
     background-color: gainsboro;
     margin: 100px auto;
@@ -14,4 +14,11 @@ li {
     list-style: none;
     padding: 10px;
     
+}
+.left{
+    float: left;
+    width: 50%;
+}
+.right{
+    float: left;
 }

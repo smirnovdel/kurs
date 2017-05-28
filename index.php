@@ -6,70 +6,83 @@
     <link rel="stylesheet" href="style.css">
 </head>
     <body>
-    <?php
-
-	$color1= '#427AA1';
-        $first_name = '#05668D';
-        $last_name = '#427AA1';
-        $middle_name = '#EBF2FA';
-        $gender = '#427AA1';
-        $color = 'white';
-        $button = '#427AA1';
-        
-        ?>
-        <div class="conteiner">
-            <form class="name_form">
-            <?php
-echo <<<ADD
-<h2  style="background-color: $color1"> Добрый день</h2>
-ADD;
-?>
-		<ul>
-                <li style="background-color:<?=$first_name?>">
-                <label for="first_name">Имя</label> <br>   
-                <input name="first_name" type="text"/>
+            <div class="conteiner">
+            <form class="name_form" method="post" action="result.php">
+            <div class="left">
+		      <ul>
+                <li>
+                <label for="food1">блюдо 1</label> <br>   
+                <input name="food1" type="text"/>
                 </li>
                 
-                <li style="background-color:<?=$last_name?>">
-                <label for="last_name">Фамилия</label> <br>   
-                <input name="last_name" type="text"/>
+                <li>
+                <label for="food2">блюдо 2</label> <br>   
+                <input name="food2" type="text"/>
                 </li>
                 
-                <li style="background-color:<?=$middle_name?>">
-                <label for="middle_name">Отчество</label> <br>   
-                <input name="middle_name" type="text"/>
+                <li>
+                <label for="food3">блюдо 3</label> <br>   
+                <input name="food3" type="text"/>
                 </li>
                 
                                 
-                <li style="background-color:<?=$gender?>">
-                <label>М    
-                <input name="gender" type="radio" value="man"/></label>
-                 <label>Ж   
-                <input name="gender" type="radio" value="woman"/>
-                  </label>  
+                <li>
+                <label for="food4">блюдо 4</label> <br>   
+                <input name="food4" type="text"/>
                 </li>
                 
-                <li style="background-color:<?=$color?>">
-                    Любимыый цвет <br>
-                <label>Красный    
-                <input type="checkbox" name="check1" /></label>
-                 <label>Желтый   
-                <input type="checkbox" name="check2" />
-                  </label>  
-                    <label>Синий   
-                <input type="checkbox" name="check2" />
-                  </label>  
-                    <label>Зеленый   
-                <input type="checkbox" name="check2" />
-                  </label>  
+                <li>
+                <label for="food5">блюдо 5</label> <br>   
+                <input name="food5" type="text"/>
                 </li>
-                
-                  <li style="background-color:<?=$button?>">
-                <label for="button">Кнопка</label> <br>   
-                <input name="button" type="button"/>
+                  
+                  <li>
+                  <label for="mealtime">Прием пищи</label> <br>
+                  <select name="mealtime">
+                    <option >Завтрак</option>
+                    <option >Обед</option>
+                    <option >Ужин</option>
+                  </select>
                 </li>
-                
+               
                 </ul>
+                
+            </div>
+                
+            <div class="right">
+                 <ul>
+                <li>
+                <label for="price1">цена 1</label> <br>   
+                <input name="price1" type="text"/>
+                </li>
+                
+                <li>
+                <label for="price2">цена 2</label> <br>   
+                <input name="price2" type="text"/>
+                </li>
+                
+                <li>
+                <label for="price3">цена 3</label> <br>   
+                <input name="price3" type="text"/>
+                </li>
+                
+                                
+                <li>
+                <label for="price4">цена 4</label> <br>   
+                <input name="price4" type="text"/>
+                </li>
+                
+                <li>
+                <label for="price5">цена 5</label> <br>   
+                <input name="price5" type="text"/>
+                </li>
+                
+                <li>
+                  <input type="submit"/>
+                </li>
+                     
+                </ul>
+            </div>
             </form>
         </div>
     </body>
