@@ -1,6 +1,6 @@
 .conteiner {
-    width: 800px;
-    height: 400px;
+    width: 1000px;
+	min-height: 400px;
     background-color: gainsboro;
     margin: 100px auto;
     border-radius: 5px;
@@ -21,4 +21,12 @@ li {
 }
 .right{
     float: left;
+}
+input{
+	float: right;
+}
+
+	tr:nth-child(2n) {
+    background: #f0f0f0;
+   
 }
