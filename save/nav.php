@@ -1,7 +1,7 @@
 				<ul>
 				<li class="nav">
 					<a href="all_menu.php">Показать меню</a>
-				</li class="nav">
+				</li >
 				<li class="nav">
 					<a href="all_menu.php">Редактировать меню</a>
 				</li >

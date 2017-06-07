@@ -1,3 +1,4 @@
+<?php include('save/db.php')?>
 <?if(isset($_POST['id'])){
 $id = $_POST['id'];
 $food = $_POST['food'];
@@ -6,13 +7,11 @@ $price = $_POST['price'];
 $time_id = $_POST['time_id'];
 /*отправка данных в таблицу БД*/
 $query = "UPDATE menu SET food='$food', weight='$weight', price='$price', time_id='$time_id' WHERE id='$id' ";
-$db=mysqli_connect('localhost','root','123','groupe1')or die('Error connecting to MySQL server.');
 mysqli_query($db,$query);
 header('Location: '.$_SERVER['REQUEST_URI'].'');	
 }?><!-- запись меню в БД -->
 <?php if(isset($_GET['id'])){$id=$_GET['id'];};
 /*выборка записи из БД для редактирования*/
-$db=mysqli_connect('localhost','root','123','groupe1')or die('Error connecting to MySQL server.');
 $query1="SELECT * FROM menu WHERE id='$id'";
 $result1 = mysqli_query($db,$query1);
 $row1 = mysqli_fetch_assoc($result1);

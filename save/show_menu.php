@@ -1,5 +1,5 @@
+<?php include('db.php')?>
 <?php 
-$db=mysqli_connect('localhost','root','123','groupe1')or die('Error connecting to MySQL server.');
 $query="SELECT menu.id, food, weight, price, table_time_id.title FROM menu INNER JOIN
 table_time_id ON menu.time_id = table_time_id.id";
 $result = mysqli_query($db,$query);
