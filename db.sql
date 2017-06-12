@@ -11,28 +11,82 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Дамп данных таблицы group.menu: ~3 rows (приблизительно)
+
+-- Дамп структуры базы данных group
+CREATE DATABASE IF NOT EXISTS `group` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `group`;
+
+-- Дамп структуры для таблица group.menu
+CREATE TABLE IF NOT EXISTS `menu` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `food` varchar(30) NOT NULL DEFAULT '0',
+  `weight` int(5) NOT NULL DEFAULT '0',
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `time_id` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `time_id` (`time_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы group.menu: ~14 rows (приблизительно)
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
 INSERT INTO `menu` (`id`, `food`, `weight`, `price`, `time_id`) VALUES
-	(40, 'Молоко', 78, 45.50, 11),
-	(45, 'Пицца', 330, 256.00, 7),
-	(46, 'ewr', 34, 23.00, 7);
+	(45, 'Пицца', 330, 256.00, 3),
+	(47, 'Яичница', 100, 125.00, 1),
+	(48, 'Капучино', 200, 150.25, 1),
+	(49, 'Мороженое', 110, 70.00, 2),
+	(50, 'Гамбургер', 139, 99.00, 3),
+	(51, 'Чай с лимоном', 160, 35.00, 1),
+	(52, 'Сендвич', 100, 186.00, 1),
+	(53, 'Каша рисовая', 230, 98.00, 1),
+	(54, 'Суп харчо', 250, 135.00, 2),
+	(55, 'Суп куринный', 250, 105.00, 2),
+	(56, 'Борщ', 250, 150.25, 2),
+	(57, 'Плов', 215, 165.00, 3),
+	(58, 'Шашлык', 200, 250.00, 3),
+	(59, 'Жаркое', 220, 222.00, 3);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
+
+-- Дамп структуры для таблица group.personal
+CREATE TABLE IF NOT EXISTS `personal` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `family` varchar(30) NOT NULL DEFAULT '0',
+  `name` varchar(30) NOT NULL DEFAULT '0',
+  `secname` varchar(30) NOT NULL DEFAULT '0',
+  `note` text NOT NULL,
+  `profession` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `profession` (`profession`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы group.personal: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
 /*!40000 ALTER TABLE `personal` ENABLE KEYS */;
 
+-- Дамп структуры для таблица group.profession
+CREATE TABLE IF NOT EXISTS `profession` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `position` varchar(50) NOT NULL DEFAULT '0',
+  `all` varchar(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- Дамп данных таблицы group.profession: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `profession` DISABLE KEYS */;
 /*!40000 ALTER TABLE `profession` ENABLE KEYS */;
 
+-- Дамп структуры для таблица group.table_time_id
+CREATE TABLE IF NOT EXISTS `table_time_id` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
 -- Дамп данных таблицы group.table_time_id: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `table_time_id` DISABLE KEYS */;
 INSERT INTO `table_time_id` (`id`, `title`) VALUES
-	(7, 'Обед'),
-	(9, 'Ужин'),
-	(11, 'Завтрак');
+	(1, 'Завтрак'),
+	(2, 'Обед'),
+	(3, 'Ужин');
 /*!40000 ALTER TABLE `table_time_id` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
