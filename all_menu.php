@@ -4,6 +4,7 @@ $del_id=$_GET['del_id'];
 $query = "DELETE FROM menu WHERE id='$del_id' ";
 mysqli_query($db,$query);	
 }?>
+
 <?php include('save/header.php')?>
 	
          <div class="left">
