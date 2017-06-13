@@ -22,11 +22,12 @@
 			 $result = mysqli_query($db,$query);?>
 			 	<!--перебираем каждую запись выбранного типа-->
 				 <? while($row = mysqli_fetch_array($result)):?>
+			 		
 			 	<!--перебираем каждую запись выбранного типа,если id данной записи есть в полученном массиве выводим-->
 				 	<? foreach($_POST['mass'] as $key => $value) :?>
 						<? if ($row['id']==$value):?>
 			 				<!--выводим заголовок если это первая запись в этом типе блюд-->
-				 			<?if ($j=$i) {echo '<th colspan="7" >'.$type_food[$i].'</th> <tr><th>Блюдо</th><th>Вес</th><th>Цена</th></tr> <tr>'; $j=0;}?>
+				 			<?if ($j==$i) {echo '<th colspan="7" >'.$type_food[$i].'</th> <tr><th>Блюдо</th><th>Вес</th><th>Цена</th></tr> <tr>'; $j=-2;}?>
 				 	 		<tr><td><?=$row['food']?> </td>  
 					 		<td> <?=$row['weight']?> гр. </td>
 					 		<td>  <?=$row['price']?> р. </td>
